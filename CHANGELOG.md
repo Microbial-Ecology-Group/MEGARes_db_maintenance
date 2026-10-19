@@ -38,12 +38,17 @@ Growth is concentrated in the most redundant part of the database: beta-lactamas
 
 **New annotation columns**
 
-The annotation file gains four columns relative to v3.00:
+The megares_extended_annotations_v4.00.csv annotation file gains four columns relative to v3.00:
 
 - `Can be confirmed` — whether an accession labelled `RequiresSNPConfirmation` has sufficient variant information in the accompanying variant database for its resistance-conferring variants to be verified computationally. Of the 628 accessions carrying the label, 339 can be confirmed and 289 cannot. This distinction was not previously exposed to users, so an accession that required confirmation but could not receive it was indistinguishable from one that could.
 - `Cluster_ID` — the cluster each accession was assigned to during dereplication, making the redundancy structure of the database explicit.
 - `Cluster_other_groups` — other gene groups represented in the same cluster, identifying accessions that are expected to compete for the same reads during alignment.
 - `Cluster_classes` — the resistance classes represented in the same cluster.
+- `Origin` — Source or origin context for the accession 
+- `Gene_role` — The gene's role in conferring resistance 
+- `SNP_requirement_evidence` — Supporting evidence for whether resistance requires specific SNPs 
+
+> **Note:** These columns were populated mainly through an automated check against NCBI. They are provided as supplementary information only and should not be treated as the definitive source for the biology of any gene accession.
 
 **Cross-database accession mapping**
 
@@ -86,6 +91,26 @@ These move an accession to a different type, class, mechanism or group, and chan
 | MEG_8674 | | gained `RequiresSNPConfirmation` | |
 
 Two notes on specific cases. MEG_3648 was annotated as *lsa(E)*, an ABC-F protein of roughly 1,479 nt, but is *lnu(B)* at roughly 804 nt; the two are typically adjacent on the same cassette, which is the likely source of the original confusion. MEG_3516 was reclassified as a mutant porin and therefore also gained the `RequiresSNPConfirmation` label, since porin-mediated resistance depends on specific mutations rather than gene presence.
+
+**Collapsing Metronidazole drug class into Nitroimidazoles**
+
+Metronidazole is a nitroimidazole, so the separate `Metronidazole` class was merged into `Nitroimidazoles`. The 31 accessions below now carry class `Nitroimidazoles`. Their mechanism and group annotations are unchanged.
+
+| Accessions | Mechanism | Group |
+|---|---|---|
+| MEG_4178, MEG_4179 | `NIM_nitroimidazole_reductase` | `NIMA` |
+| MEG_4180, MEG_9982 | `NIM_nitroimidazole_reductase` | `NIMB` |
+| MEG_4181 | `NIM_nitroimidazole_reductase` | `NIMC` |
+| MEG_4182 | `NIM_nitroimidazole_reductase` | `NIMD` |
+| MEG_4183, MEG_4184, MEG_4185, MEG_11499 | `NIM_nitroimidazole_reductase` | `NIME` |
+| MEG_4186, MEG_11505 | `NIM_nitroimidazole_reductase` | `NIMF` |
+| MEG_8271 | `NIM_nitroimidazole_reductase` | `NIMG` |
+| MEG_4187, MEG_9965, MEG_11500 | `NIM_nitroimidazole_reductase` | `NIMH` |
+| MEG_4188, MEG_4189, MEG_4190, MEG_4191, MEG_4192, MEG_4193, MEG_11494, MEG_11495, MEG_11496, MEG_11497, MEG_11498 | `NIM_nitroimidazole_reductase` | `NIMI` |
+| MEG_4194 | `NIM_nitroimidazole_reductase` | `NIMJ` |
+| MEG_8272 | `NIM_nitroimidazole_reductase` | `NIMK` |
+| MEG_8662 | `RDXA_nitroimidazole_reductase` | `RDXA` |
+| MEG_8101 | `FXR_nitroimidazole_reductase` | `FXRA` (RequiresSNPConfirmation) |
 
 **Spelling corrections**
 

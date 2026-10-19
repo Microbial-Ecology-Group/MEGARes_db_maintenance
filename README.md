@@ -97,7 +97,9 @@ MEG_3244|Drugs|Aminocoumarins|Aminocoumarin-resistant_DNA_topoisomerases|GYRBA|R
 
 The five pipe-delimited fields are the ontology levels, so annotation can be parsed from the reference name alone without a separate lookup file. Spaces are replaced by underscores in headers; the annotation file retains the spaces.
 
-The optional sixth field marks accessions whose resistance depends on a specific sequence variant rather than on gene presence. Coverage of these genes is **not** evidence of resistance without variant confirmation. The annotation file's `Can be confirmed` column records whether an accession carrying this label has sufficient variant information for computational confirmation.
+The optional sixth field marks accessions whose resistance depends on a specific sequence variant rather than on gene presence. Coverage of these genes is **not** evidence of resistance without variant confirmation. The annotation file's `Can_be_confirmed` column records whether an accession carrying this label has sufficient variant information for computational confirmation.
+
+A detailed description of the columns found in the annotation files can be found [here](database_files/v4/megares_annotation_fields_v4.00.md).
 
 ---
 
@@ -179,7 +181,7 @@ Users redistributing MEGARes or a derivative should check the terms of each sour
 
 If you use MEGARes, please cite the release you used. Version history is in [CHANGELOG.md](CHANGELOG.md).
 
-[CITATION TO BE ADDED]
+[V4 CITATION TO BE ADDED]
 
 Previous releases:
 
@@ -187,10 +189,3 @@ Previous releases:
 - **v2.00** — Doster E, et al. MEGARes 2.0: a database for classification of antimicrobial drug, biocide and metal resistance determinants in metagenomic sequence data. *Nucleic Acids Research* 48:D561–D569 (2020).
 - **v1.01** — Lakin SM, et al. MEGARes: an antimicrobial resistance database for high throughput sequencing. *Nucleic Acids Research* 45:D574–D580 (2017).
 
-## License
-
-[LICENSE TO BE ADDED]
-
-## Contact
-
-[CONTACT TO BE ADDED]
